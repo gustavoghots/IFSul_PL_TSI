@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Formulário elaborado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white p-8">
+    <div class="border border-gray-300 p-4">
+        <h2 class="font-bold mb-4">Dados pessoais</h2>
+        <div class="mb-4">
+            <label for="nome" class="block mb-2">Nome:</label>
+            <input type="text" id="nome" class="border border-gray-300 p-2 w-full">
+        </div>
+        <div class="mb-4">
+            <label for="idade" class="block mb-2">Idade:</label>
+            <input type="text" id="idade" class="border border-gray-300 p-2 w-full">
+        </div>
+        <h2 class="font-bold mb-4">Dados profissionais</h2>
+        <div class="mb-4">
+            <label for="escolaridade" class="block mb-2">Escolaridade:</label>
+            <select id="escolaridade" class="border border-gray-300 p-2 w-full">
+                <option>Ensino Médio</option>
+                <option>Ensino Técnico</option>
+                <option>Ensino Superior</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <span class="block mb-2">Área de atuação</span>
+            <label class="inline-flex items-center mr-4">
+                <input type="radio" name="area" class="form-radio" checked>
+                <span class="ml-2">Gerência</span>
+            </label>
+            <label class="inline-flex items-center mr-4">
+                <input type="radio" name="area" class="form-radio">
+                <span class="ml-2">Financeiro</span>
+            </label>
+            <label class="inline-flex items-center">
+                <input type="radio" name="area" class="form-radio">
+                <span class="ml-2">Recepção</span>
+            </label>
+        </div>
+    </div>
+</body>
+</html>

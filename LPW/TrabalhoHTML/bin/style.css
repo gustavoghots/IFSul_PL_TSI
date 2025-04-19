@@ -1,0 +1,12 @@
+.feature {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.5rem;
+}
+
+.bg-light-50 {
+  background-color: rgba(248, 249, 250, 0.95);
+}

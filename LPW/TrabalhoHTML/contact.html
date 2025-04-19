@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div data-include="bin/header.html"></div>
+    <section class="py-5" style="
+        background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210903/pngtree-take-dumbbells-with-both-hands-in-the-equipment-area-of-the-image_783163.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    ">
+        <div class="container px-5 bg-opacity-25">
+            <!-- Contact form-->
+            <div class="rounded-3 py-5 px-4 px-md-5 mb-5 shadow-lg bg-light-50">
+                <div class="text-center mb-5">
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                        <i class="bi bi-chat-dots"></i>
+                    </div>
+                    <h1 class="fw-bolder">Fale com a gente</h1>
+                    <p class="lead fw-normal text-muted mb-0">Queremos saber sua opinião sobre nosso site!</p>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6">
+                        <form id="feedbackForm">
+                            <!-- Nome -->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="nome" type="text" placeholder="Digite seu nome"
+                                    required />
+                                <label for="nome">Nome completo</label>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="seuemail@exemplo.com"
+                                    required />
+                                <label for="email">Email</label>
+                            </div>
+
+                            <!-- Gênero -->
+                            <div class="mb-3">
+                                <label class="form-label d-block">Gênero</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="genero" id="generoMasculino"
+                                        value="masculino" required>
+                                    <label class="form-check-label" for="generoMasculino">Masculino</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="genero" id="generoFeminino"
+                                        value="feminino">
+                                    <label class="form-check-label" for="generoFeminino">Feminino</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="genero" id="generoOutro"
+                                        value="outro">
+                                    <label class="form-check-label" for="generoOutro">Outro</label>
+                                </div>
+                            </div>
+
+                            <!-- Plano -->
+                            <div class="mb-3">
+                                <label for="plano" class="form-label">Plano atual</label>
+                                <select class="form-select" id="plano" required>
+                                    <option value="" disabled selected>Selecione seu plano</option>
+                                    <option value="standard">Standard</option>
+                                    <option value="premium">Premium</option>
+                                    <option value="plus">Plus</option>
+                                    <option value="plus_aqua">Plus Aqua</option>
+                                </select>
+                            </div>
+
+                            <!-- Mensagem -->
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="mensagem" placeholder="Digite sua mensagem aqui..."
+                                    style="height: 10rem" required></textarea>
+                                <label for="mensagem">Mensagem</label>
+                            </div>
+
+                            <!-- Botões -->
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-secondary" type="reset">Limpar</button>
+                                <button class="btn btn-primary" type="submit">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
+    <div data-include="bin/footer.html"></div>
+    <script src="bin/includes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+
+</html>

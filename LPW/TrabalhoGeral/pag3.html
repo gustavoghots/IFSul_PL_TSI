@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="css/estilo.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+  <header class="bg-dark text-white p-3">
+    <nav class="container d-flex justify-content-between">
+      <h1 class="h3">FIT ON</h1>
+      <ul class="nav">
+        <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+        <li class="nav-item"><a href="pag1.html" class="nav-link">Tabela</a></li>
+        <li class="nav-item"><a href="pag2.html" class="nav-link">Formulário</a></li>
+        <li class="nav-item"><a href="pag3.html" class="nav-link active">Calculadora</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container my-4">
+    <h2>Calculadora</h2>
+    <label>Número 1: <input type="number" id="n1"></label><br>
+    <label>Número 2: <input type="number" id="n2"></label><br>
+    <button onclick="calcular('soma')">+</button>
+    <button onclick="calcular('subtracao')">-</button>
+    <button onclick="calcular('multiplicacao')">*</button>
+    <button onclick="calcular('divisao')">/</button>
+    <button onclick="calcular('potencia')">^</button>
+    <button onclick="calcular('raiz')">√</button>
+    <p>Resultado: <span id="resultado"></span></p>
+  </main>
+  <footer class="bg-dark text-white text-center p-3">
+    <p>&copy; Gustavo Fiss - 2025</p>
+  </footer>
+  <script src="js/codigo.js"></script>
+</body>
+</html>

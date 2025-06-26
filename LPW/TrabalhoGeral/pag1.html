@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela e Lista</title>
+  <link rel="stylesheet" href="css/estilo.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+<body>
+  <header class="bg-dark text-white p-3">
+    <nav class="container d-flex justify-content-between">
+      <h1 class="h3">FIT ON</h1>
+      <ul class="nav">
+        <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+        <li class="nav-item"><a href="pag1.html" class="nav-link active">Tabela</a></li>
+        <li class="nav-item"><a href="pag2.html" class="nav-link">Formulário</a></li>
+        <li class="nav-item"><a href="pag3.html" class="nav-link">Calculadora</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container my-4">
+    <section>
+      <h2>Tabela de Atividades</h2>
+      <table id="tabela" class="table table-bordered">
+        <tr class="destaque"><th>Dia</th><th>Exercício</th><th>Duração</th><th>Intensidade</th></tr>
+        <tr><td>Segunda</td><td>Musculação</td><td>1h</td><td>Média</td></tr>
+        <tr><td>Quarta</td><td>Corrida</td><td>45min</td><td>Alta</td></tr>
+        <tr class="destaque"><td>Sexta</td><td>Yoga</td><td>1h</td><td>Baixa</td></tr>
+      </table>
+      <button onclick="alterarCorTabela()">Mudar Cores</button>
+    </section>
+    <section>
+      <h2>Lista de Treinos</h2>
+      <button onclick="ordenarLista(true)">Crescente</button>
+      <button onclick="ordenarLista(false)">Decrescente</button>
+      <ol id="listaTreinos">
+        <li>Cardio</li>
+        <li>Musculação</li>
+        <li>Pilates</li>
+        <li>Crossfit</li>
+        <li>Alongamento</li>
+      </ol>
+    </section>
+  </main>
+  <footer class="bg-dark text-white text-center p-3">
+    <p>&copy; Gustavo Fiss - 2025</p>
+  </footer>
+  <script src="js/codigo.js"></script>
+</body>
+</html>

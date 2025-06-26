@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+  <link rel="stylesheet" href="css/estilo.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+<body>
+  <header class="bg-dark text-white p-3">
+    <nav class="container d-flex justify-content-between">
+      <h1 class="h3">FIT ON</h1>
+      <ul class="nav">
+        <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+        <li class="nav-item"><a href="pag1.html" class="nav-link">Tabela</a></li>
+        <li class="nav-item"><a href="pag2.html" class="nav-link active">Formulário</a></li>
+        <li class="nav-item"><a href="pag3.html" class="nav-link">Calculadora</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container my-4">
+    <h2>Fale Conosco</h2>
+    <form id="formulario" onsubmit="return validarFormulario()">
+      <label>Nome: <input type="text" id="nome"></label><br>
+      <label>Email: <input type="email" id="email"></label><br>
+      <label>Sexo:
+        <input type="radio" name="sexo" value="M"> Masculino
+        <input type="radio" name="sexo" value="F"> Feminino
+      </label><br>
+      <label>Plano:
+        <select id="plano">
+          <option value="">Selecione</option>
+          <option>Standard</option>
+          <option>Plus</option>
+        </select>
+      </label><br>
+      <label>Mensagem:<br><textarea id="mensagem"></textarea></label><br>
+      <label><input type="checkbox" id="termos"> Aceito os termos</label><br>
+      <input type="submit" value="Enviar">
+      <input type="reset" value="Limpar">
+    </form>
+  </main>
+  <footer class="bg-dark text-white text-center p-3">
+    <p>&copy; Gustavo Fiss - 2025</p>
+  </footer>
+  <script src="js/codigo.js"></script>
+</body>
+</html>

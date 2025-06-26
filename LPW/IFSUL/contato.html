@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contato - IFSUL</title>
+  <link href="css/layout.css" rel="stylesheet" />
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 30rem;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+    }
+    input, textarea {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+    }
+    button {
+      background-color: var(--color-primary);
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: var(--color-bg-dark);
+    }
+  </style>
+</head>
+<body>
+  <div id="site">
+    <header id="cabecalho" class="grupo">
+      <a href="index.html" id="logo">
+        <img src="imagens/logo-ifsul.jpg" alt="Logomarca do IFSUL" />
+      </a>
+      <nav id="menu-principal" role="navigation" aria-label="Menu principal">
+        <ul class="grupo">
+          <li><a href="missao.html">Missão</a></li>
+          <li><a href="campus.html">Campus</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="contato.html" class="ativo">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="conteudo" class="grupo">
+      <section id="conteudo-principal">
+        <h1>Entre em Contato</h1>
+        <form action="mailto:contato@ifsul.edu.br" method="post" enctype="text/plain">
+          <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required />
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+
+      <aside id="conteudo-secundario">
+        <h1>Fale Conosco</h1>
+        <p>Use o formulário ao lado para enviar dúvidas, sugestões ou solicitações. Retornaremos o mais breve possível.</p>
+      </aside>
+    </main>
+
+    <footer id="rodape">
+      <p id="telefone-email">
+        contato@ifsul.edu.br<br />
+        <span class="ddd">53</span> 3026.6050
+      </p>
+      <p id="endereco">
+        Rua Gonçalves Chaves, 3218<br />
+        CEP 96015-560<br />
+        Pelotas - RS
+      </p>
+      <small id="copyright">&copy; IFSUL - Instituto Federal Sul-rio-grandense.</small>
+    </footer>
+  </div>
+</body>
+</html>

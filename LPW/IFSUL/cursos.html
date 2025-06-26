@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cursos - IFSUL</title>
+  <link href="css/layout.css" rel="stylesheet" />
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      text-align: left;
+    }
+    th {
+      background-color: var(--color-bg-light);
+      color: var(--color-primary);
+    }
+  </style>
+</head>
+<body>
+  <div id="site">
+    <header id="cabecalho" class="grupo">
+      <a href="index.html" id="logo">
+        <img src="imagens/logo-ifsul.jpg" alt="Logomarca do IFSUL" />
+      </a>
+      <nav id="menu-principal" role="navigation" aria-label="Menu principal">
+        <ul class="grupo">
+          <li><a href="missao.html">Missão</a></li>
+          <li><a href="campus.html">Campus</a></li>
+          <li><a href="cursos.html" class="ativo">Cursos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="conteudo" class="grupo">
+      <section id="conteudo-principal">
+        <h1>Cursos Oferecidos</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Curso</th>
+              <th>Nível</th>
+              <th>Campus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Informática para Internet</td>
+              <td>Tecnólogo</td>
+              <td>Pelotas</td>
+            </tr>
+            <tr>
+              <td>Engenharia Elétrica</td>
+              <td>Bacharelado</td>
+              <td>Bagé</td>
+            </tr>
+            <tr>
+              <td>Química</td>
+              <td>Licenciatura</td>
+              <td>CaVG</td>
+            </tr>
+            <tr>
+              <td>Automação Industrial</td>
+              <td>Técnico Integrado</td>
+              <td>Charqueadas</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <aside id="conteudo-secundario">
+        <h1>Formações Diversificadas</h1>
+        <p>O IFSUL oferece cursos técnicos, tecnológicos, de graduação e pós-graduação nas mais diversas áreas do conhecimento.</p>
+      </aside>
+    </main>
+
+    <footer id="rodape">
+      <p id="telefone-email">
+        contato@ifsul.edu.br<br />
+        <span class="ddd">53</span> 3026.6050
+      </p>
+      <p id="endereco">
+        Rua Gonçalves Chaves, 3218<br />
+        CEP 96015-560<br />
+        Pelotas - RS
+      </p>
+      <small id="copyright">&copy; IFSUL - Instituto Federal Sul-rio-grandense.</small>
+    </footer>
+  </div>
+</body>
+</html>

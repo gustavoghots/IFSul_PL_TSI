@@ -1,5 +1,4 @@
-Logica/Listas/*.exe
-Logica/*.exe
+*.exe
 temp.*
 *.zip
 banco de dados

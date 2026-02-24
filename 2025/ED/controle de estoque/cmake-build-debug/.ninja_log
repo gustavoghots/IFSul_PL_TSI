@@ -1,0 +1,17 @@
+# ninja log v6
+244	2135	7866877457754495	CMakeFiles/ControleDeEstoque.dir/controller/stock/menu.c.obj	a69703ec42299631
+9	205	7866884654535632	CMakeFiles/ControleDeEstoque.dir/src/structs/list/list.c.obj	1d98639f9360d9fe
+8	231	7867691100792575	CMakeFiles/ControleDeEstoque.dir/controller/main.c.obj	18c83b01ede6d5e0
+194	438	7866052236496441	CMakeFiles/ControleDeEstoque.dir/src/structs/queue/queue.c.obj	55f1aae4b5d189eb
+2600	7426	7867690352572455	ControleDeEstoque.exe	a7d37f25c965f6a2
+206	441	7866052236626447	CMakeFiles/ControleDeEstoque.dir/src/structs/stack/stack.c.obj	8dcde17ce1653452
+10	223	7866879879974193	CMakeFiles/ControleDeEstoque.dir/src/JSONparser/json_handler.c.obj	25420d8f4be9a1fb
+4	1177	7867691560138450	build.ninja	14ac409de0fce189
+4	1177	7867691560036604	C:/aula/IFSul_PL_TSI/ED/controle de estoque/cmake-build-debug/cmake_install.cmake	14ac409de0fce189
+11	143	7866887379069038	CMakeFiles/ControleDeEstoque.dir/controller/stock/menuEstoque.c.obj	c90df00ef2a3a79b
+17	360	7866891597365776	CMakeFiles/ControleDeEstoque.dir/controller/stock/menuStock.c.obj	ec46e8a52f09c6f8
+14	297	7866899948699021	CMakeFiles/ControleDeEstoque.dir/controller/cart/menuCart.c.obj	88a4b6dca33f2849
+41	544	7867691589354635	CMakeFiles/ControleDeEstoque.dir/controller/order/orderMenu.c.obj	860e33c7836d3775
+548	769	7867691594422972	ControleDeEstoque.exe	ebf24f0e1c41c182
+44	1396	7876326877835925	CMakeFiles/ControleDeEstoque.dir/controller/main.c.obj	18c83b01ede6d5e0
+1397	3608	7876326891361658	ControleDeEstoque.exe	ebf24f0e1c41c182

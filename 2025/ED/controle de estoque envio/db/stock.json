@@ -1,0 +1,5 @@
+[
+  { "id": 10, "qty": 10.00, "description": "Mesa" },
+  { "id": 1, "qty": 1.00, "description": "Caneta" },
+  { "id": 30, "qty": 10.00, "description": "Caderno" }
+]

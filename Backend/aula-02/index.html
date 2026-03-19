@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f2f2f2;
+      }
+
+      .form {
+        width: 350px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background: white;
+        border-radius: 6px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .title {
+        margin: 0 0 10px 0;
+      }
+
+      .input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .subtitle {
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+
+      .btn {
+        margin-top: 10px;
+        padding: 10px;
+        background: #2f6fed;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background: #2459c7;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form class="form">
+      <h3 class="title">Cadastrar Produto</h3>
+
+      <select name="categoria" id="categoria" class="input">
+        <option value="" disabled selected>
+          Selecione a Categoria do Produto
+        </option>
+        <option value="eletronicos">Eletrônicos</option>
+        <option value="roupas">Roupas</option>
+        <option value="alimentos">Alimentos</option>
+      </select>
+
+      <input
+        class="input"
+        type="text"
+        name="nome"
+        placeholder="Nome do Produto"
+      />
+      <input
+        class="input"
+        type="text"
+        name="descricao"
+        placeholder="Descrição do Produto"
+      />
+      <input
+        class="input"
+        type="number"
+        name="preco"
+        placeholder="Quantidade do Produto"
+      />
+
+      <h4 class="subtitle">Tipo de Produto</h4>
+
+      <label>
+        <input type="radio" name="tipo" value="novo" /> Eletrodoméstico
+      </label>
+
+      <label> <input type="radio" name="tipo" value="usado" /> Móveis </label>
+
+      <button class="btn" type="submit">Cadastrar</button>
+    </form>
+  </body>
+</html>

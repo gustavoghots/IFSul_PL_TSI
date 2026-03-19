@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seletores CSS — Índice</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <style>
+    .groups-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 48px;
+    }
+
+    .group-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-decoration: none;
+      color: var(--text-1);
+      transition: background 0.15s, border-color 0.15s;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .group-card:hover {
+      background: var(--surface-3);
+      border-color: rgba(69,104,245,0.35);
+    }
+
+    .group-letter {
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .group-title {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-1);
+    }
+
+    .group-meta {
+      font-size: 12px;
+      color: var(--text-3);
+    }
+
+    .intro-section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .intro-section h2 {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 20px;
+    }
+
+    .topic-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .topic-list li {
+      font-size: 14px;
+      color: var(--text-2);
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .topic-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--text-3);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">Seletores CSS</a>
+      <ul>
+        <li><a href="exercicios_a.html">Grupo A</a></li>
+        <li><a href="exercicios_b.html">Grupo B</a></li>
+        <li><a href="exercicios_c.html">Grupo C</a></li>
+        <li><a href="exercicios_d.html">Grupo D</a></li>
+        <li><a href="exercicios_e.html">Grupo E</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="eyebrow">DFE_1 — Atividade 02</div>
+      <h1>Seletores Avançados</h1>
+      <p>Exercícios de combinadores, pseudo-classes, pseudo-elementos e seletores de atributo.</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="intro-section">
+      <h2>Conteúdo</h2>
+      <div class="groups-grid">
+        <a class="group-card" href="exercicios_a.html">
+          <span class="group-letter">A</span>
+          <span class="group-title">Combinadores</span>
+          <span class="group-meta">Exercícios 1 – 4</span>
+        </a>
+        <a class="group-card" href="exercicios_b.html">
+          <span class="group-letter">B</span>
+          <span class="group-title">Pseudo-classes</span>
+          <span class="group-meta">Exercícios 5 – 8</span>
+        </a>
+        <a class="group-card" href="exercicios_c.html">
+          <span class="group-letter">C</span>
+          <span class="group-title">Pseudo-elementos</span>
+          <span class="group-meta">Exercícios 9 – 11</span>
+        </a>
+        <a class="group-card" href="exercicios_d.html">
+          <span class="group-letter">D</span>
+          <span class="group-title">Seletores de atributo</span>
+          <span class="group-meta">Exercícios 12 – 13</span>
+        </a>
+        <a class="group-card" href="exercicios_e.html">
+          <span class="group-letter">E</span>
+          <span class="group-title">Atributo com padrão</span>
+          <span class="group-meta">Exercícios 14 – 17</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>DFE_1 · Atividade 02 — Seletores</span>
+      <span>Parte 2 · Seletores Avançados</span>
+    </div>
+  </footer>
+
+</body>
+</html>

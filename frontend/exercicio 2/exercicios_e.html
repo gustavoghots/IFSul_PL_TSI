@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo E — Atributo com Padrão</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <style>
+    /* Exercício 14 — [title*="carta"] — title contém "carta" */
+    .ex14 img[title*="carta"] { border: 4px solid red; border-radius: 6px; }
+
+    /* Exercício 15 — [title^="sequencia"] — title começa com "sequencia" */
+    .ex15 img[title^="sequencia"] { border: 4px solid blue; border-radius: 6px; }
+
+    /* Exercício 16 — [title$="carta"] — title termina com "carta" */
+    .ex16 img[title$="carta"] { border: 4px solid green; border-radius: 6px; }
+
+    /* Exercício 17 — [title~="flor"] — title contém a palavra exata "flor" */
+    .ex17 img[title~="flor"] { border: 4px solid orange; border-radius: 6px; }
+
+    .img-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .img-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .img-item img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 2px solid var(--border);
+      background: var(--surface-3);
+    }
+
+    .img-item span {
+      font-size: 11px;
+      color: var(--text-3);
+      font-family: var(--mono);
+      text-align: center;
+      max-width: 140px;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">Seletores CSS</a>
+      <ul>
+        <li><a href="exercicios_a.html">Grupo A</a></li>
+        <li><a href="exercicios_b.html">Grupo B</a></li>
+        <li><a href="exercicios_c.html">Grupo C</a></li>
+        <li><a href="exercicios_d.html">Grupo D</a></li>
+        <li><a href="exercicios_e.html" class="active">Grupo E</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="eyebrow">Grupo E</div>
+      <h1>Atributo com Padrão</h1>
+      <p>Seletores <code>[attr*=]</code>, <code>[attr^=]</code>, <code>[attr$=]</code> e <code>[attr~=]</code> aplicados a imagens.</p>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Exercício 14 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 14</span>
+        <span class="ex-desc">Seletor <code>img[title*="carta"]</code> — borda vermelha em imagens cujo title <em>contém</em> a palavra "carta".</span>
+      </div>
+      <div class="demo-area ex14">
+        <div class="img-row">
+          <div class="img-item">
+            <img src="../img/17_coringa.jpg" title="coringa carta" alt="coringa" />
+            <span>title="coringa carta" ✓</span>
+          </div>
+          <div class="img-item">
+            <img src="../img/cartasSequencia.jpg" title="sequencia de cartas" alt="sequencia" />
+            <span>title="sequencia de cartas" ✓</span>
+          </div>
+          <div class="img-item">
+            <img src="../img/sequenciaAs.jpg" title="ases em sequencia de cartas" alt="ases" />
+            <span>title="ases em sequencia…" ✓</span>
+          </div>
+        </div>
+      </div>
+      <div class="code-block">/* Exercício 14 — [title*="carta"] contém */
+img[title*="carta"] { border: 4px solid red; }</div>
+    </div>
+
+    <!-- Exercício 15 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 15</span>
+        <span class="ex-desc">Seletor <code>img[title^="sequencia"]</code> — borda azul em imagens cujo title <em>começa com</em> "sequencia".</span>
+      </div>
+      <div class="demo-area ex15">
+        <div class="img-row">
+          <div class="img-item">
+            <img src="../img/17_coringa.jpg" title="coringa carta" alt="coringa" />
+            <span>title="coringa carta" ✗</span>
+          </div>
+          <div class="img-item">
+            <img src="../img/cartasSequencia.jpg" title="sequencia de cartas" alt="sequencia" />
+            <span>title="sequencia de cartas" ✓</span>
+          </div>
+          <div class="img-item">
+            <img src="../img/sequenciaAs.jpg" title="ases em sequencia de cartas" alt="ases" />
+            <span>title="ases em sequencia…" ✗</span>
+          </div>
+        </div>
+      </div>
+      <div class="code-block">/* Exercício 15 — [title^="sequencia"] começa com */
+img[title^="sequencia"] { border: 4px solid blue; }</div>
+    </div>
+
+    <!-- Exercício 16 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 16</span>
+        <span class="ex-desc">Seletor <code>img[title$="carta"]</code> — borda verde em imagens cujo title <em>termina com</em> "carta".</span>
+      </div>
+      <div class="demo-area ex16">
+        <div class="img-row">
+          <div class="img-item">
+            <img src="../img/17_coringa.jpg" title="coringa carta" alt="coringa" />
+            <span>title="coringa carta" ✓</span>
+          </div>
+          <div class="img-item">
+            <img src="../img/cartasSequencia.jpg" title="sequencia de cartas" alt="sequencia" />
+            <span>title="sequencia de cartas" ✗</span>
+          </div>
+          <div class="img-item">
+            <img src="../img/sequenciaAs.jpg" title="ases em sequencia de cartas " alt="ases" />
+            <span>title="ases… cartas " ✗ (espaço)</span>
+          </div>
+        </div>
+      </div>
+      <div class="code-block">/* Exercício 16 — [title$="carta"] termina com */
+img[title$="carta"] { border: 4px solid green; }</div>
+    </div>
+
+    <!-- Exercício 17 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 17</span>
+        <span class="ex-desc">Seletor <code>img[title~="flor"]</code> — borda laranja em imagens cujo title contém a <em>palavra exata</em> "flor". Nenhuma das imagens do exemplo contém "flor", então foi adicionada uma de teste.</span>
+      </div>
+      <div class="demo-area ex17">
+        <div class="img-row">
+          <div class="img-item">
+            <img src="../img/17_coringa.jpg" title="coringa carta" alt="coringa" />
+            <span>title="coringa carta" ✗</span>
+          </div>
+          <div class="img-item">
+            <img src="../img/cartasSequencia.jpg" title="sequencia de cartas" alt="sequencia" />
+            <span>title="sequencia de cartas" ✗</span>
+          </div>
+          <div class="img-item">
+            <img src="../img/cartasSequencia.jpg" title="baralho de flor especial" alt="flor" />
+            <span>title="baralho de flor especial" ✓</span>
+          </div>
+        </div>
+      </div>
+      <div class="code-block">/* Exercício 17 — [title~="flor"] palavra exata */
+img[title~="flor"] { border: 4px solid orange; }</div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>DFE_1 · Atividade 02 — Seletores</span>
+      <span>Grupo E · Exercícios 14 – 17</span>
+    </div>
+  </footer>
+
+</body>
+</html>

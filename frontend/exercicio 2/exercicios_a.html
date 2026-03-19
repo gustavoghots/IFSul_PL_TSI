@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo A — Combinadores</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <style>
+    /* Exercício 1 — seletor descendente (div p) */
+    .ex1 div p { color: red; }
+
+    /* Exercício 2 — seletor filho imediato (div > p) */
+    .ex2 div > p { color: yellow; }
+
+    /* Exercício 3 — irmão adjacente (div + p) */
+    .ex3 div + p { color: green; }
+
+    /* Exercício 4 — irmãos gerais (div ~ p) */
+    .ex4 div ~ p { color: purple; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">Seletores CSS</a>
+      <ul>
+        <li><a href="exercicios_a.html" class="active">Grupo A</a></li>
+        <li><a href="exercicios_b.html">Grupo B</a></li>
+        <li><a href="exercicios_c.html">Grupo C</a></li>
+        <li><a href="exercicios_d.html">Grupo D</a></li>
+        <li><a href="exercicios_e.html">Grupo E</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="eyebrow">Grupo A</div>
+      <h1>Combinadores</h1>
+      <p>Seletores descendente, filho, irmão adjacente e irmãos gerais.</p>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Exercício 1 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 1</span>
+        <span class="ex-desc">Descendente <code>div p</code> — todos os &lt;p&gt; dentro de &lt;div&gt; ficam vermelhos.</span>
+      </div>
+      <div class="demo-area ex1">
+        <div>
+          <p>Parágrafo 1 — dentro da div (vermelho).</p>
+          <p>Parágrafo 2 — dentro da div (vermelho).</p>
+        </div>
+        <p>Parágrafo 3 — fora da div (cor padrão).</p>
+        <p>Parágrafo 4 — fora da div (cor padrão).</p>
+      </div>
+      <div class="code-block">/* Exercício 1 — seletor descendente */
+div p { color: red; }</div>
+    </div>
+
+    <!-- Exercício 2 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 2</span>
+        <span class="ex-desc">Filho imediato <code>div &gt; p</code> — somente filhos diretos de &lt;div&gt; ficam amarelos.</span>
+      </div>
+      <div class="demo-area ex2">
+        <div>
+          <p>Parágrafo 1 — filho direto da div (amarelo).</p>
+          <p>Parágrafo 2 — filho direto da div (amarelo).</p>
+        </div>
+        <p>Parágrafo 3 — fora da div (cor padrão).</p>
+        <p>Parágrafo 4 — fora da div (cor padrão).</p>
+      </div>
+      <div class="code-block">/* Exercício 2 — seletor filho imediato */
+div > p { color: yellow; }</div>
+    </div>
+
+    <!-- Exercício 3 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 3</span>
+        <span class="ex-desc">Irmão adjacente <code>div + p</code> — o primeiro &lt;p&gt; logo após uma &lt;div&gt; fica verde.</span>
+      </div>
+      <div class="demo-area ex3">
+        <div>
+          <p>Parágrafo 1 — dentro da div (cor padrão).</p>
+          <p>Parágrafo 2 — dentro da div (cor padrão).</p>
+        </div>
+        <p>Parágrafo 3 — primeiro irmão após a div (verde).</p>
+        <p>Parágrafo 4 — segundo irmão após a div (cor padrão).</p>
+      </div>
+      <div class="code-block">/* Exercício 3 — seletor irmão adjacente */
+div + p { color: green; }</div>
+    </div>
+
+    <!-- Exercício 4 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 4</span>
+        <span class="ex-desc">Irmãos gerais <code>div ~ p</code> — todos os &lt;p&gt; irmãos que aparecem após a &lt;div&gt; ficam roxos.</span>
+      </div>
+      <div class="demo-area ex4">
+        <div>
+          <p>Parágrafo 1 — dentro da div (cor padrão).</p>
+          <p>Parágrafo 2 — dentro da div (cor padrão).</p>
+        </div>
+        <p>Parágrafo 3 — irmão após a div (roxo).</p>
+        <p>Parágrafo 4 — irmão após a div (roxo).</p>
+      </div>
+      <div class="code-block">/* Exercício 4 — seletor irmãos gerais */
+div ~ p { color: purple; }</div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>DFE_1 · Atividade 02 — Seletores</span>
+      <span>Grupo A · Exercícios 1 – 4</span>
+    </div>
+  </footer>
+
+</body>
+</html>

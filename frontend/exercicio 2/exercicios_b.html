@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo B — Pseudo-classes</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <style>
+    /* Exercício 5 — :hover em links */
+    .ex5 a:hover { background-color: red; color: #fff; padding: 2px 6px; border-radius: 4px; }
+
+    /* Exercício 6 — :hover em elementos com classe .master */
+    .ex6 .master:hover { background-color: yellow; color: #111; padding: 2px 6px; border-radius: 4px; }
+
+    /* Exercício 7 — :first-child em <p> */
+    .ex7 p:first-child { background-color: orange; color: #111; padding: 6px 10px; border-radius: 4px; }
+
+    /* Exercício 8 — :focus em <input> */
+    .ex8 input:focus { background-color: yellow; color: #111; outline: none; border-color: #f5c800; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">Seletores CSS</a>
+      <ul>
+        <li><a href="exercicios_a.html">Grupo A</a></li>
+        <li><a href="exercicios_b.html" class="active">Grupo B</a></li>
+        <li><a href="exercicios_c.html">Grupo C</a></li>
+        <li><a href="exercicios_d.html">Grupo D</a></li>
+        <li><a href="exercicios_e.html">Grupo E</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="eyebrow">Grupo B</div>
+      <h1>Pseudo-classes</h1>
+      <p>:hover, :first-child e :focus aplicados a links, elementos com classe e inputs.</p>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Exercício 5 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 5</span>
+        <span class="ex-desc">Pseudo-classe <code>a:hover</code> — fundo vermelho ao passar o mouse sobre um link.</span>
+      </div>
+      <div class="demo-area ex5">
+        <h1>Cabeçalho.</h1>
+        <p>Parágrafo.</p>
+        <a href="#">Link — passe o mouse aqui.</a>
+      </div>
+      <div class="code-block">/* Exercício 5 — :hover em links */
+a:hover { background-color: red; }</div>
+    </div>
+
+    <!-- Exercício 6 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 6</span>
+        <span class="ex-desc">Pseudo-classe <code>.master:hover</code> — fundo amarelo ao passar o mouse sobre elementos com a classe <code>master</code>.</span>
+      </div>
+      <div class="demo-area ex6">
+        <h1 class="master">Cabeçalho com classe master — passe o mouse.</h1>
+        <p class="master">Parágrafo com classe master — passe o mouse.</p>
+        <p>Parágrafo sem a classe (sem efeito).</p>
+        <a href="#" class="master">Link com classe master — passe o mouse.</a>
+      </div>
+      <div class="code-block">/* Exercício 6 — :hover em .master */
+.master:hover { background-color: yellow; }</div>
+    </div>
+
+    <!-- Exercício 7 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 7</span>
+        <span class="ex-desc">Pseudo-classe <code>p:first-child</code> — fundo laranja para o &lt;p&gt; que é o primeiro filho de seu pai.</span>
+      </div>
+      <div class="demo-area ex7">
+        <p>Parágrafo 1 — primeiro filho do pai (laranja).</p>
+        <p>Parágrafo 2 — não é o primeiro filho (cor padrão).</p>
+        <p>Parágrafo 3 — não é o primeiro filho (cor padrão).</p>
+      </div>
+      <div class="code-block">/* Exercício 7 — :first-child */
+p:first-child { background-color: orange; }</div>
+    </div>
+
+    <!-- Exercício 8 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 8</span>
+        <span class="ex-desc">Pseudo-classe <code>input:focus</code> — fundo amarelo quando o campo estiver em foco.</span>
+      </div>
+      <div class="demo-area ex8" style="display:flex; flex-direction:column; gap:12px;">
+        <label style="font-size:13px; color:var(--text-2);">Clique no campo para ver o efeito:</label>
+        <input type="text" placeholder="Clique aqui para focar..."
+          style="padding:10px 14px; border:1px solid var(--border); border-radius:6px; font-size:14px; width:320px;" />
+      </div>
+      <div class="code-block">/* Exercício 8 — :focus em input */
+input:focus { background-color: yellow; }</div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>DFE_1 · Atividade 02 — Seletores</span>
+      <span>Grupo B · Exercícios 5 – 8</span>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo C — Pseudo-elementos</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <style>
+    /* Exercício 9 — ::first-line */
+    .ex9 p.intro::first-line { background-color: blue; color: #fff; }
+
+    /* Exercício 10 — ::first-letter */
+    .ex10 p.intro::first-letter {
+      background-color: green;
+      color: #fff;
+      font-size: 2em;
+      font-weight: 500;
+      padding: 2px 6px;
+      margin-right: 4px;
+      float: left;
+      line-height: 1;
+    }
+
+    /* Exercício 11 — ::before e ::after */
+    .ex11 p::before {
+      content: url('https://www.google.com/favicon.ico');
+      display: inline-block;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .ex11 p::after {
+      content: url('https://www.google.com/favicon.ico');
+      display: inline-block;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">Seletores CSS</a>
+      <ul>
+        <li><a href="exercicios_a.html">Grupo A</a></li>
+        <li><a href="exercicios_b.html">Grupo B</a></li>
+        <li><a href="exercicios_c.html" class="active">Grupo C</a></li>
+        <li><a href="exercicios_d.html">Grupo D</a></li>
+        <li><a href="exercicios_e.html">Grupo E</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="eyebrow">Grupo C</div>
+      <h1>Pseudo-elementos</h1>
+      <p>::first-line, ::first-letter, ::before e ::after.</p>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Exercício 9 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 9</span>
+        <span class="ex-desc">Pseudo-elemento <code>::first-line</code> — fundo azul na primeira linha do parágrafo.</span>
+      </div>
+      <div class="demo-area ex9">
+        <p class="intro">
+          Guerra! A República está desmoronando com os ataques do cruel
+          Lorde Sith, Conde Dookan. Existem heróis em ambos os lados.
+          O Mal está em toda a parte. Numa ação impressionante, o diabólico
+          líder dos androides, General Grievous, entrou de assalto na
+          capital da República e sequestrou o Chanceler Palpatine, líder do
+          Senado Galáctico.
+        </p>
+      </div>
+      <div class="code-block">/* Exercício 9 — ::first-line */
+p.intro::first-line { background-color: blue; color: #fff; }</div>
+    </div>
+
+    <!-- Exercício 10 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 10</span>
+        <span class="ex-desc">Pseudo-elemento <code>::first-letter</code> — fundo verde na primeira letra do &lt;p&gt;.</span>
+      </div>
+      <div class="demo-area ex10">
+        <p class="intro">
+          Guerra! A República está desmoronando com os ataques do cruel
+          Lorde Sith, Conde Dookan. Existem heróis em ambos os lados.
+          O Mal está em toda a parte. Numa ação impressionante, o diabólico
+          líder dos androides, General Grievous, entrou de assalto na
+          capital da República e sequestrou o Chanceler Palpatine, líder do
+          Senado Galáctico.
+        </p>
+      </div>
+      <div class="code-block">/* Exercício 10 — ::first-letter */
+p.intro::first-letter { background-color: green; color: #fff; font-size: 2em; }</div>
+    </div>
+
+    <!-- Exercício 11 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 11</span>
+        <span class="ex-desc">Pseudo-elementos <code>::before</code> e <code>::after</code> — imagem inserida antes e depois de cada &lt;p&gt;.</span>
+      </div>
+      <div class="demo-area ex11" style="display:flex; flex-direction:column; gap:12px;">
+        <p>Parágrafo 1.</p>
+        <p>Parágrafo 2.</p>
+      </div>
+      <div class="code-block">/* Exercício 11 — ::before e ::after */
+p::before { content: url('imagem.png'); margin-right: 8px; }
+p::after  { content: url('imagem.png'); margin-left: 8px; }</div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>DFE_1 · Atividade 02 — Seletores</span>
+      <span>Grupo C · Exercícios 9 – 11</span>
+    </div>
+  </footer>
+
+</body>
+</html>

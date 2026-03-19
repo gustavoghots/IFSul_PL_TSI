@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Simulação de Corrida</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <style>
+      body {
+        font-family: Arial;
+        margin: 20px;
+      }
+
+      #map {
+        height: 500px;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .info {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Simulação de Corrida</h2>
+    <p>Clique no mapa para escolher o destino.</p>
+
+    <div id="map"></div>
+
+    <div class="info">
+      <p><b>Origem:</b> <span id="origem"></span></p>
+      <p><b>Destino:</b> <span id="destino"></span></p>
+      <p><b>Tempo estimado (mock):</b> <span id="tempo"></span> segundos</p>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+      let map;
+      let origemLat;
+      let origemLng;
+
+      let destinoMarker;
+      let linha;
+      let carro;
+
+      function iniciarMapa(lat, lng) {
+        origemLat = lat;
+        origemLng = lng;
+
+        document.getElementById("origem").innerText = lat + " , " + lng;
+
+        map = L.map("map", {
+          minZoom: 13,
+          maxZoom: 19,
+        }).setView([lat, lng], 15);
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+        }).addTo(map);
+
+        // limite de área (~10km)
+        const bounds = L.latLngBounds(
+          [lat - 0.3, lng - 0.3],
+          [lat + 0.3, lng + 0.3],
+        );
+
+        map.setMaxBounds(bounds);
+
+        // marcador origem
+        L.marker([lat, lng]).addTo(map).bindPopup("Você está aqui").openPopup();
+
+        map.on("click", selecionarDestino);
+      }
+
+      function selecionarDestino(e) {
+        const destLat = e.latlng.lat;
+        const destLng = e.latlng.lng;
+
+        document.getElementById("destino").innerText =
+          destLat + " , " + destLng;
+
+        if (destinoMarker) {
+          destinoMarker.setLatLng(e.latlng);
+        } else {
+          destinoMarker = L.marker(e.latlng).addTo(map);
+        }
+
+        if (linha) {
+          map.removeLayer(linha);
+        }
+
+        linha = L.polyline(
+          [
+            [origemLat, origemLng],
+            [destLat, destLng],
+          ],
+          {
+            color: "blue",
+            weight: 4,
+          },
+        ).addTo(map);
+
+        const tempoMock = 20;
+
+        document.getElementById("tempo").innerText = tempoMock;
+
+        iniciarCarro(destLat, destLng, tempoMock);
+      }
+
+      function iniciarCarro(destLat, destLng, tempo) {
+        if (carro) {
+          map.removeLayer(carro);
+        }
+
+        carro = L.marker([origemLat, origemLng]).addTo(map);
+
+        moverCarro(destLat, destLng, tempo);
+      }
+
+      function moverCarro(destLat, destLng, tempo) {
+        const passos = 100;
+        const intervalo = (tempo * 1000) / passos;
+
+        let i = 0;
+
+        const latStep = (destLat - origemLat) / passos;
+        const lngStep = (destLng - origemLng) / passos;
+
+        const animacao = setInterval(() => {
+          i++;
+
+          const novaLat = origemLat + latStep * i;
+          const novaLng = origemLng + lngStep * i;
+
+          carro.setLatLng([novaLat, novaLng]);
+
+          if (i >= passos) {
+            clearInterval(animacao);
+          }
+        }, intervalo);
+      }
+
+      function erroLocalizacao() {
+        alert("Não foi possível obter localização. Usando posição padrão.");
+        iniciarMapa(-31.77, -52.34);
+      }
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((pos) => {
+          iniciarMapa(pos.coords.latitude, pos.coords.longitude);
+        }, erroLocalizacao);
+      } else {
+        erroLocalizacao();
+      }
+    </script>
+  </body>
+</html>

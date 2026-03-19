@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercícios JS</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        margin: 20px;
+      }
+
+      input,
+      button {
+        margin: 5px;
+        padding: 5px;
+      }
+
+      p {
+        color: blue;
+      }
+    </style>
+
+    <script>
+      // 1
+      function campoAtivado() {
+        document.getElementById("msg1").innerHTML = "campo ativado";
+      }
+
+      function perdeuFoco() {
+        document.getElementById("msg1").innerHTML = "perdeu o foco";
+      }
+
+      function alterouConteudo() {
+        document.getElementById("msg2").innerHTML = "alterou o conteúdo";
+      }
+
+      // 2
+      function verificarNota() {
+        var valor = document.getElementById("nota").value;
+        var msg = "";
+
+        if (valor >= 0 && valor <= 10) {
+          msg = "Insuficiente";
+        } else if (valor >= 11 && valor <= 14) {
+          msg = "Bom";
+        } else if (valor > 14) {
+          msg = "Muito Bom";
+        }
+
+        document.getElementById("resultadoNota").innerHTML = msg;
+      }
+
+      // 3
+      function verificarParImpar() {
+        var numero = document.getElementById("numero").value;
+
+        if (numero % 2 == 0) {
+          document.getElementById("resultadoNumero").innerHTML =
+            "O número é par";
+        } else {
+          document.getElementById("resultadoNumero").innerHTML =
+            "O número é impar";
+        }
+      }
+
+      // 4
+      function calcularMedia() {
+        var nome = document.getElementById("nomeAluno").value;
+        var n1 = parseFloat(document.getElementById("n1").value);
+        var n2 = parseFloat(document.getElementById("n2").value);
+        var n3 = parseFloat(document.getElementById("n3").value);
+
+        var media = (n1 + n2 + n3) / 3;
+
+        if (media >= 6) {
+          document.getElementById("resultadoMedia").innerHTML =
+            nome + " - Média: " + media + " - Aprovado";
+        } else {
+          document.getElementById("resultadoMedia").innerHTML =
+            nome + " - Média: " + media + " - Reprovado";
+        }
+      }
+
+      // 5
+      function validarUsuario() {
+        var login = document.getElementById("login").value;
+        var senha = document.getElementById("senha").value;
+        var confirmar = document.getElementById("confirmar").value;
+
+        var msg = "";
+
+        if (login == "" || senha == "" || confirmar == "") {
+          msg = "Campos Obrigatórios";
+        } else if (senha.length < 8) {
+          msg = "Senha deve ter no mínimo 8 caracteres";
+        } else if (senha != confirmar) {
+          msg = "Problemas com a confirmação de senha";
+        } else {
+          msg = "Cadastro realizado com sucesso";
+        }
+
+        document.getElementById("resultadoUsuario").innerHTML = msg;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h3>1 - Eventos</h3>
+
+    <input
+      type="text"
+      placeholder="Primeiro campo"
+      onfocus="campoAtivado()"
+      onblur="perdeuFoco()"
+    />
+
+    <input
+      type="text"
+      placeholder="Segundo campo"
+      onchange="alterouConteudo()"
+    />
+
+    <p id="msg1"></p>
+    <p id="msg2"></p>
+
+    <h3>2 - Nota</h3>
+
+    <input type="text" id="nota" placeholder="Digite a nota" />
+    <button onclick="verificarNota()">Verificar</button>
+
+    <p id="resultadoNota"></p>
+
+    <h3>3 - Par ou Ímpar</h3>
+
+    <input type="text" id="numero" placeholder="Digite um número" />
+    <button onclick="verificarParImpar()">Verificar</button>
+
+    <p id="resultadoNumero"></p>
+
+    <h3>4 - Média do aluno</h3>
+
+    <input type="text" id="nomeAluno" placeholder="Nome" /><br />
+    <input type="text" id="n1" placeholder="Nota 1" /><br />
+    <input type="text" id="n2" placeholder="Nota 2" /><br />
+    <input type="text" id="n3" placeholder="Nota 3" /><br />
+
+    <button onclick="calcularMedia()">Calcular</button>
+
+    <p id="resultadoMedia"></p>
+
+    <h3>5 - Cadastro</h3>
+
+    <input type="text" id="login" placeholder="Login" /><br />
+    <input type="password" id="senha" placeholder="Senha" /><br />
+    <input type="password" id="confirmar" placeholder="Confirmar senha" /><br />
+
+    <button onclick="validarUsuario()">Validar</button>
+
+    <p id="resultadoUsuario"></p>
+  </body>
+</html>

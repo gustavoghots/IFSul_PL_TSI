@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo D — Seletores de Atributo</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <style>
+    /* Exercício 12 — [target] — qualquer <a> com atributo target */
+    .ex12 a[target] { background-color: pink; color: #111; padding: 4px 10px; border-radius: 4px; }
+
+    /* Exercício 13 — [target="_blank"] — <a> com target="_blank" especificamente */
+    .ex13 a[target="_blank"] { background-color: blue; color: #fff; padding: 4px 10px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">Seletores CSS</a>
+      <ul>
+        <li><a href="exercicios_a.html">Grupo A</a></li>
+        <li><a href="exercicios_b.html">Grupo B</a></li>
+        <li><a href="exercicios_c.html">Grupo C</a></li>
+        <li><a href="exercicios_d.html" class="active">Grupo D</a></li>
+        <li><a href="exercicios_e.html">Grupo E</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="eyebrow">Grupo D</div>
+      <h1>Seletores de Atributo</h1>
+      <p>Selecionar elementos pela presença ou valor de um atributo HTML.</p>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Exercício 12 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 12</span>
+        <span class="ex-desc">Seletor <code>a[target]</code> — fundo rosa para &lt;a&gt; que possuem <em>qualquer</em> atributo <code>target</code>.</span>
+      </div>
+      <div class="demo-area ex12" style="display:flex; flex-direction:column; gap:14px;">
+        <a href="#">IFSul — sem target (sem estilo).</a>
+        <a href="#" target="_blank">Pelotas — target="_blank" (rosa).</a>
+        <a href="#" target="_top">Wikipedia — target="_top" (rosa).</a>
+      </div>
+      <div class="code-block">/* Exercício 12 — [target] presença do atributo */
+a[target] { background-color: pink; }</div>
+    </div>
+
+    <!-- Exercício 13 -->
+    <div class="exercise-block">
+      <div class="ex-header">
+        <span class="ex-number">Exercício 13</span>
+        <span class="ex-desc">Seletor <code>a[target="_blank"]</code> — fundo azul somente para &lt;a&gt; com <code>target="_blank"</code>.</span>
+      </div>
+      <div class="demo-area ex13" style="display:flex; flex-direction:column; gap:14px;">
+        <a href="#">IFSul — sem target (sem estilo).</a>
+        <a href="#" target="_blank">Pelotas — target="_blank" (azul).</a>
+        <a href="#" target="_top">Wikipedia — target="_top" (sem estilo).</a>
+      </div>
+      <div class="code-block">/* Exercício 13 — [target="_blank"] valor exato */
+a[target="_blank"] { background-color: blue; color: #fff; }</div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>DFE_1 · Atividade 02 — Seletores</span>
+      <span>Grupo D · Exercícios 12 – 13</span>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 2 — Cores Alternadas</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <style>
+      .demo-area {
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 32px;
+      }
+
+      .paragraphs {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 24px;
+      }
+
+      .paragraphs p {
+        background: var(--surface-3);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 12px 16px;
+        font-size: 14px;
+        transition: color 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a class="nav-logo" href="index.html">← DOM JS</a>
+        <ul>
+          <li><a href="exercicio1.html">Ex. 1</a></li>
+          <li><a href="exercicio2.html" class="active">Ex. 2</a></li>
+          <li><a href="exercicio3.html">Ex. 3</a></li>
+          <li><a href="exercicio4.html">Ex. 4</a></li>
+          <li><a href="exercicio5.html">Ex. 5</a></li>
+          <li><a href="exercicio6.html">Ex. 6</a></li>
+          <li><a href="exercicio7.html">Ex. 7</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="page-header">
+      <div class="page-header-inner">
+        <div class="eyebrow">Exercício 2</div>
+        <h1>Cores Alternadas</h1>
+        <p>
+          Índice ímpar → vermelho, índice par → azul. Usa
+          <code>style.color</code> dentro de um loop.
+        </p>
+      </div>
+    </div>
+
+    <main>
+      <div class="exercise-block">
+        <div class="demo-area">
+          <div class="paragraphs">
+            <p>Primeiro parágrafo.</p>
+            <p>Segundo parágrafo.</p>
+            <p>Terceiro parágrafo.</p>
+            <p>Quarto parágrafo.</p>
+            <p>Quinto parágrafo.</p>
+            <p>Sexto parágrafo.</p>
+          </div>
+          <button class="btn" onclick="alternarCores()">Alternar cores</button>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="ex-label">Código</div>
+        <div class="code-block">
+          function alternarCores() { const paragrafos =
+          document.getElementsByTagName('p'); for (let i = 0; i &lt;
+          paragrafos.length; i++) { // índice ímpar (1, 3, 5...) → vermelho //
+          índice par (0, 2, 4...) → azul if (i % 2 !== 0) {
+          paragrafos[i].style.color = 'red'; } else { paragrafos[i].style.color
+          = 'blue'; } } }
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>DFE_1 · Atividade 03 — DOM e Eventos JS</span>
+        <span>Exercício 2</span>
+      </div>
+    </footer>
+
+    <script>
+      function alternarCores() {
+        const paragrafos = document.getElementsByTagName("p");
+        for (let i = 0; i < paragrafos.length; i++) {
+          if (i % 2 !== 0) {
+            paragrafos[i].style.color = "red";
+          } else {
+            paragrafos[i].style.color = "blue";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

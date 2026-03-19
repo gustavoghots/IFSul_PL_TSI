@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 6 — Aumentar / Diminuir Fonte</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <style>
+      .demo-area {
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 32px;
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 40px;
+        align-items: center;
+      }
+
+      #textoParagrafo {
+        font-size: 16px;
+        line-height: 1.65;
+        color: var(--text-1);
+        transition: font-size 0.2s;
+      }
+
+      .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 8px;
+      }
+
+      .btn-icon {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 300;
+        background: var(--surface-3);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        color: var(--text-1);
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+
+      .btn-icon:hover {
+        background: var(--surface-4);
+      }
+
+      .size-display {
+        font-family: var(--mono);
+        font-size: 28px;
+        font-weight: 300;
+        color: var(--accent);
+        line-height: 1;
+      }
+
+      .size-label {
+        font-size: 12px;
+        color: var(--text-3);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a class="nav-logo" href="index.html">← DOM JS</a>
+        <ul>
+          <li><a href="exercicio1.html">Ex. 1</a></li>
+          <li><a href="exercicio2.html">Ex. 2</a></li>
+          <li><a href="exercicio3.html">Ex. 3</a></li>
+          <li><a href="exercicio4.html">Ex. 4</a></li>
+          <li><a href="exercicio5.html">Ex. 5</a></li>
+          <li><a href="exercicio6.html" class="active">Ex. 6</a></li>
+          <li><a href="exercicio7.html">Ex. 7</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="page-header">
+      <div class="page-header-inner">
+        <div class="eyebrow">Exercício 6</div>
+        <h1>Aumentar / Diminuir Fonte</h1>
+        <p>
+          Modifica <code>style.fontSize</code> progressivamente ao clicar nos
+          botões.
+        </p>
+      </div>
+    </div>
+
+    <main>
+      <div class="exercise-block">
+        <div class="demo-area">
+          <p id="textoParagrafo">
+            O tamanho desta fonte muda progressivamente a cada clique nos botões
+            ao lado. Use os controles para aumentar ou diminuir o texto conforme
+            desejar.
+          </p>
+
+          <div class="controls">
+            <div>
+              <div class="size-display" id="sizeDisplay">16</div>
+              <div class="size-label">px atual</div>
+            </div>
+            <div class="btn-group">
+              <button class="btn-icon" id="btnAumentar" title="Aumentar fonte">
+                +
+              </button>
+              <button class="btn-icon" id="btnDiminuir" title="Diminuir fonte">
+                −
+              </button>
+            </div>
+            <button class="btn btn-ghost" id="btnReset" style="font-size: 13px">
+              Resetar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="ex-label">Código</div>
+        <div class="code-block">
+          const paragrafo = document.getElementById('textoParagrafo'); const
+          btnAumentar = document.getElementById('btnAumentar'); const
+          btnDiminuir = document.getElementById('btnDiminuir'); let tamanhoAtual
+          = 16; // tamanho inicial em px btnAumentar.addEventListener('click',
+          function () { tamanhoAtual += 2; paragrafo.style.fontSize =
+          tamanhoAtual + 'px'; }); btnDiminuir.addEventListener('click',
+          function () { if (tamanhoAtual > 8) { // limite mínimo tamanhoAtual -=
+          2; paragrafo.style.fontSize = tamanhoAtual + 'px'; } });
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>DFE_1 · Atividade 03 — DOM e Eventos JS</span>
+        <span>Exercício 6</span>
+      </div>
+    </footer>
+
+    <script>
+      const paragrafo = document.getElementById("textoParagrafo");
+      const btnAumentar = document.getElementById("btnAumentar");
+      const btnDiminuir = document.getElementById("btnDiminuir");
+      const btnReset = document.getElementById("btnReset");
+      const sizeDisplay = document.getElementById("sizeDisplay");
+
+      let tamanhoAtual = 16;
+
+      btnAumentar.addEventListener("click", function () {
+        tamanhoAtual += 2;
+        paragrafo.style.fontSize = tamanhoAtual + "px";
+        sizeDisplay.textContent = tamanhoAtual;
+      });
+
+      btnDiminuir.addEventListener("click", function () {
+        if (tamanhoAtual > 8) {
+          tamanhoAtual -= 2;
+          paragrafo.style.fontSize = tamanhoAtual + "px";
+          sizeDisplay.textContent = tamanhoAtual;
+        }
+      });
+
+      btnReset.addEventListener("click", function () {
+        tamanhoAtual = 16;
+        paragrafo.style.fontSize = "16px";
+        sizeDisplay.textContent = 16;
+      });
+    </script>
+  </body>
+</html>

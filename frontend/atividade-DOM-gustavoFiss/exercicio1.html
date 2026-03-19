@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 1 — Alterando Conteúdo</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <style>
+      .demo-area {
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 32px;
+      }
+
+      .paragraphs {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 24px;
+      }
+
+      .paragraphs p {
+        background: var(--surface-3);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 12px 16px;
+        font-size: 14px;
+        color: var(--text-1);
+        transition: background 0.2s;
+      }
+
+      .paragraphs p.changed {
+        background: rgba(69, 104, 245, 0.1);
+        border-color: rgba(69, 104, 245, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a class="nav-logo" href="index.html">← DOM JS</a>
+        <ul>
+          <li><a href="exercicio1.html" class="active">Ex. 1</a></li>
+          <li><a href="exercicio2.html">Ex. 2</a></li>
+          <li><a href="exercicio3.html">Ex. 3</a></li>
+          <li><a href="exercicio4.html">Ex. 4</a></li>
+          <li><a href="exercicio5.html">Ex. 5</a></li>
+          <li><a href="exercicio6.html">Ex. 6</a></li>
+          <li><a href="exercicio7.html">Ex. 7</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="page-header">
+      <div class="page-header-inner">
+        <div class="eyebrow">Exercício 1</div>
+        <h1>Alterando Conteúdo</h1>
+        <p>
+          Usa <code>getElementsByTagName</code> para selecionar todos os
+          &lt;p&gt; e um loop para alterar o <code>textContent</code> de cada
+          um.
+        </p>
+      </div>
+    </div>
+
+    <main>
+      <div class="exercise-block">
+        <div class="demo-area">
+          <div class="paragraphs" id="paragrafoContainer">
+            <p>Texto original do primeiro parágrafo.</p>
+            <p>Texto original do segundo parágrafo.</p>
+            <p>Texto original do terceiro parágrafo.</p>
+            <p>Texto original do quarto parágrafo.</p>
+            <p>Texto original do quinto parágrafo.</p>
+          </div>
+          <button class="btn" onclick="alterarConteudo()">
+            Alterar conteúdo
+          </button>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="ex-label">Código</div>
+        <div class="code-block">
+          function alterarConteudo() { // getElementsByTagName retorna todos os
+          <p>
+            da página const paragrafos = document.getElementsByTagName('p'); //
+            loop percorre cada elemento e altera o textContent for (let i = 0; i
+            &lt; paragrafos.length; i++) { paragrafos[i].textContent =
+            'Parágrafo ' + (i + 1); paragrafos[i].classList.add('changed'); } }
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>DFE_1 · Atividade 03 — DOM e Eventos JS</span>
+        <span>Exercício 1</span>
+      </div>
+    </footer>
+
+    <script>
+      function alterarConteudo() {
+        const paragrafos = document.getElementsByTagName("p");
+        for (let i = 0; i < paragrafos.length; i++) {
+          paragrafos[i].textContent = "Parágrafo " + (i + 1);
+          paragrafos[i].classList.add("changed");
+        }
+      }
+    </script>
+  </body>
+</html>

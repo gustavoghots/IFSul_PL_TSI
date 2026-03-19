@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade DOM — Índice</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <style>
+      .exercises-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        padding: 56px 0;
+      }
+
+      .ex-card {
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 28px 24px;
+        text-decoration: none;
+        color: var(--text-1);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        transition:
+          background 0.15s,
+          border-color 0.15s;
+      }
+
+      .ex-card:hover {
+        background: var(--surface-3);
+        border-color: rgba(69, 104, 245, 0.35);
+      }
+
+      .ex-num {
+        font-size: 26px;
+        font-weight: 300;
+        color: var(--accent);
+        line-height: 1;
+      }
+
+      .ex-title {
+        font-size: 14px;
+        font-weight: 400;
+      }
+      .ex-tag {
+        font-size: 12px;
+        color: var(--text-3);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a class="nav-logo" href="index.html">DOM JS</a>
+        <ul>
+          <li><a href="exercicio1.html">Ex. 1</a></li>
+          <li><a href="exercicio2.html">Ex. 2</a></li>
+          <li><a href="exercicio3.html">Ex. 3</a></li>
+          <li><a href="exercicio4.html">Ex. 4</a></li>
+          <li><a href="exercicio5.html">Ex. 5</a></li>
+          <li><a href="exercicio6.html">Ex. 6</a></li>
+          <li><a href="exercicio7.html">Ex. 7</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="page-header">
+      <div class="page-header-inner">
+        <div class="eyebrow">DFE_1 — Atividade 03</div>
+        <h1>Manipulação da Árvore DOM</h1>
+        <p>
+          Seleção de elementos, eventos e manipulação de estilos com JavaScript.
+        </p>
+      </div>
+    </div>
+
+    <main>
+      <div class="exercises-grid">
+        <a class="ex-card" href="exercicio1.html">
+          <span class="ex-num">1</span>
+          <span class="ex-title">Alterando Conteúdo</span>
+          <span class="ex-tag">getElementsByTagName · loop</span>
+        </a>
+        <a class="ex-card" href="exercicio2.html">
+          <span class="ex-num">2</span>
+          <span class="ex-title">Cores Alternadas</span>
+          <span class="ex-tag">style.color · índice par/ímpar</span>
+        </a>
+        <a class="ex-card" href="exercicio3.html">
+          <span class="ex-num">3</span>
+          <span class="ex-title">Mostrar / Ocultar</span>
+          <span class="ex-tag">style.display · toggle</span>
+        </a>
+        <a class="ex-card" href="exercicio4.html">
+          <span class="ex-num">4</span>
+          <span class="ex-title">Trocar Cor de Fundo</span>
+          <span class="ex-tag">getElementById · input</span>
+        </a>
+        <a class="ex-card" href="exercicio5.html">
+          <span class="ex-num">5</span>
+          <span class="ex-title">Esconder / Mostrar</span>
+          <span class="ex-tag">addEventListener · display toggle</span>
+        </a>
+        <a class="ex-card" href="exercicio6.html">
+          <span class="ex-num">6</span>
+          <span class="ex-title">Aumentar / Diminuir Fonte</span>
+          <span class="ex-tag">style.fontSize · progressivo</span>
+        </a>
+        <a class="ex-card" href="exercicio7.html">
+          <span class="ex-num">7</span>
+          <span class="ex-title">Interatividade com o Mouse</span>
+          <span class="ex-tag">mouseover · mouseout</span>
+        </a>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>DFE_1 · Atividade 03 — DOM e Eventos JS</span>
+        <span>7 exercícios</span>
+      </div>
+    </footer>
+  </body>
+</html>

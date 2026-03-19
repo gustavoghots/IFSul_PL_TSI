@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 4 — Trocar Cor de Fundo</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <style>
+      .demo-area {
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 32px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        align-items: start;
+      }
+
+      .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .controls label {
+        font-size: 12px;
+        color: var(--text-2);
+      }
+
+      #colorBox {
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: var(--radius);
+        background: var(--surface-3);
+        border: 1px solid var(--border);
+        transition: background-color 0.4s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .input-row {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .feedback-color {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--text-3);
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a class="nav-logo" href="index.html">← DOM JS</a>
+        <ul>
+          <li><a href="exercicio1.html">Ex. 1</a></li>
+          <li><a href="exercicio2.html">Ex. 2</a></li>
+          <li><a href="exercicio3.html">Ex. 3</a></li>
+          <li><a href="exercicio4.html" class="active">Ex. 4</a></li>
+          <li><a href="exercicio5.html">Ex. 5</a></li>
+          <li><a href="exercicio6.html">Ex. 6</a></li>
+          <li><a href="exercicio7.html">Ex. 7</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="page-header">
+      <div class="page-header-inner">
+        <div class="eyebrow">Exercício 4</div>
+        <h1>Trocar Cor de Fundo</h1>
+        <p>
+          Usa <code>getElementById</code> e um
+          <code>addEventListener</code> para aplicar a cor digitada à div.
+        </p>
+      </div>
+    </div>
+
+    <main>
+      <div class="exercise-block">
+        <div class="demo-area">
+          <div class="controls">
+            <label for="corInput">Digite um nome de cor ou valor hex</label>
+            <div class="input-row">
+              <input
+                id="corInput"
+                class="input-field"
+                type="text"
+                placeholder="ex: red, #3b82f6, rgb(100,200,50)"
+              />
+            </div>
+            <button class="btn" id="btnAplicar">Aplicar cor</button>
+            <div class="feedback-color" id="feedbackCor">—</div>
+          </div>
+
+          <div id="colorBox">colorBox</div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <div class="ex-label">Código</div>
+        <div class="code-block">
+          // Seleciona os elementos pelo id const colorBox =
+          document.getElementById('colorBox'); const corInput =
+          document.getElementById('corInput'); const btnAplicar =
+          document.getElementById('btnAplicar'); // addEventListener dispara ao
+          clique no botão btnAplicar.addEventListener('click', function () {
+          const cor = corInput.value.trim(); if (cor) {
+          colorBox.style.backgroundColor = cor; } });
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>DFE_1 · Atividade 03 — DOM e Eventos JS</span>
+        <span>Exercício 4</span>
+      </div>
+    </footer>
+
+    <script>
+      const colorBox = document.getElementById("colorBox");
+      const corInput = document.getElementById("corInput");
+      const btnAplicar = document.getElementById("btnAplicar");
+      const feedbackCor = document.getElementById("feedbackCor");
+
+      btnAplicar.addEventListener("click", function () {
+        const cor = corInput.value.trim();
+        if (cor) {
+          colorBox.style.backgroundColor = cor;
+          colorBox.textContent = cor;
+          feedbackCor.textContent = "Cor aplicada: " + cor;
+        }
+      });
+
+      corInput.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") btnAplicar.click();
+      });
+    </script>
+  </body>
+</html>
